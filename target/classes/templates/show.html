@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml.com" xmlns:th="http://www.thymleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>employee_details</title>
+</head>
+<body bgcolor="litegreen">
+<h4 align="center">Employee Details</h4>
+<table border="2">
+<thead>
+<tr>
+<th><b>Id</b></th>
+<th><b>Name</b></th>
+<th><b>Salary</b></th>
+<th><b>Experience</b></th>
+<th><b>Job Role</b></th>
+</tr>
+</thead>
+<tbody>
+<tr th:each="emp:${data}">
+<td th:text="${emp.id}"></td>
+<td th:text="${emp.name}"></td>
+<td th:text="${emp.salary}"></td>
+<td th:text="${emp.experience}"></td>
+<td th:text="${emp.role}"></td>
+<td><a th:href="@{'/edit/'+${emp.id}}">Update</a> </td>
+<td><a th:href="@{'/delete/'+${emp.id}}">Delete</a> </td>
+</tbody>
+</table>
+<br>
+<a href="addData">Add Details</a>
+</body>
+</html>

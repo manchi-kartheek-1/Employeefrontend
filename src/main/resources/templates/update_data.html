@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml.com" xmlns:th="http://www.thymleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body bgcolor="litered">
+<h4 align="center">Update Employee Details</h4>
+<form action="#" th:action=@{/save} th:object="${employee}" method="post">
+<table border="2">
+<tr><td>Id:<input type="number" th:field="*{id}" readonly="readonly"></td></tr>
+<tr><td>Name:<input type="text" th:field="*{name}" required="required" /></td></tr>
+<tr><td>Salary:<input type="number" th:field="*{salary}" required="required" /></td></tr>
+<tr><td>Experience:<input type="number" th:field="*{experience}" required="required" /></td> </tr>
+<tr><td>Role:<input type="text" th:field="*{role}" required="required" /></td> <tr></tr>
+</table>
+<br>
+<button type="submit">Update Details</button>
+</form>
+</body>
+</html>
